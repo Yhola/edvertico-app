@@ -17,10 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q cryptography
       - name: Pull and lock live data
         env:
-          EDV_DATA_KEY: ${{ secrets.EDV_DATA_KEY }}
           NOTION_PAGE_ID: 40c6beaf8db58187bcdcf2c6b1e585d7
         run: python3 tools/pull_live.py
       - name: Commit if changed
