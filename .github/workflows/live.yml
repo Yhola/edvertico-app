@@ -20,7 +20,6 @@ jobs:
       - run: pip install -q cryptography
       - name: Pull and lock live data
         env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           EDV_DATA_KEY: ${{ secrets.EDV_DATA_KEY }}
           NOTION_PAGE_ID: 40c6beaf8db58187bcdcf2c6b1e585d7
         run: python3 tools/pull_live.py
