@@ -28,7 +28,11 @@ for b in blocks.values():
 m = re.search(r"EDV1\.[A-Za-z0-9_\-]+\.[A-Za-z0-9_\-\s]+", text)
 if not m:
     sys.exit("no EDV1 pack in the code block")
-key = ub64(os.environ["EDV_DATA_KEY"].strip())
+_km = re.search(r"[A-Za-z0-9+/]{43}=", os.environ["EDV_DATA_KEY"])
+if not _km:
+    sys.exit("EDV_DATA_KEY secret does not contain a valid key")
+KEY_TEXT = _km.group(0)
+key = ub64(KEY_TEXT)
 data = unpack_text(key, m.group(0))  # fails if the text was changed or damaged
 assert isinstance(data.get("days"), dict), "days must be an object"
 for d in data["days"].values():
@@ -42,7 +46,7 @@ if os.path.exists("live.sha") and open("live.sha").read().strip() == sha:
     print("no change"); sys.exit(0)
 with tempfile.TemporaryDirectory() as t:
     k, p = os.path.join(t, "k"), os.path.join(t, "live.json")
-    open(k, "w").write(os.environ["EDV_DATA_KEY"].strip()); open(p, "w").write(canon)
+    open(k, "w").write(KEY_TEXT); open(p, "w").write(canon)
     subprocess.run([sys.executable, os.path.join(os.path.dirname(__file__), "edv.py"), "lock", k, p, "live.enc.json"], check=True)
 open("live.sha", "w").write(sha + "\n")
 print("updated", data.get("updatedAt"))
