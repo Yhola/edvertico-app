@@ -1,0 +1,36 @@
+{
+"v": 1,
+"rounds": 310000,
+"users": {
+"3178e160fe176553b614d55ba83194a257b93c2139b23345f226a0a6df58c489": {
+"s": "gadeVUGonv/x6a1g/J9ucw==",
+"i": "XcUa8dYriKbSVWhG",
+"w": "mYgN72fQ5slzePJ1J2EK3gjS+gI6AEKlkOfS7YQP4uXMYZXDqQID0DG9IQEbim5B"
+},
+"3908e9f675507e500c28058741f0a4d7fc2aabfa1da9911edbf4c3e0f3e53ec0": {
+"s": "WXmLISPxxYrdilGhzD+0fw==",
+"i": "6dxT4ymCDZIcTks6",
+"w": "1Dc6TOuH4uN++A1oOBNCrmeqO5BqQDPrLxUFRNrFBOZcIMPtXQ+DqeMjqROnanHH"
+},
+"3a38237224fc20d9911c6e05e1f4c81be8e8f1323c83f5534956c7e0f8cc7c84": {
+"s": "QXa64lNSnuAf5Ix4CSz3jw==",
+"i": "TKXFd1O5jH5kp8o6",
+"w": "qZ/cIoVG0oEkb88wGZte8p5a9fvyZbypb3f13FuBXDEpqda/gUoWvfezjuOdSNvE"
+},
+"699d3d026d73cae48ace74a8df1cec56379f356cf1d1ed5f381c2fccdd1f8bc0": {
+"s": "lBnqN9xzXYv5xZvEfYGP/w==",
+"i": "fXKws05kzc4z7bAd",
+"w": "+7JzJXcC69xStkh+LbEkmrTAa7S4pDikari8PBF/EayBnnlcZNIW3MbWjnJRiP0r"
+},
+"80f126117fcbc79cad9c9cd50759419b807866ace4125320a72e4d09885d5033": {
+"s": "mRghQIfLmhWrLlw31EphMg==",
+"i": "kZkvWFIMDltODeNM",
+"w": "qAAvLf48RYPefLjJQBR5BEtU4hEwpaUsvdPKgNFSBpHS0swW87SvBtWgUJexlgdj"
+},
+"101fbc0d2d5123d487ceebd0df74d3dd9405119163c514c00b9afdcdefafbe52": {
+"s": "At9TOEuaxdiWkxFX5TR1rw==",
+"i": "cxk341hGCncz7Ece",
+"w": "KaNoy5BODokncqrYwYcPRfioTddTQOHnEy+enl4X9NkW5f4QMXM6S8XvWlcFljGe"
+}
+}
+}
