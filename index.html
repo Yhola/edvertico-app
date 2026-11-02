@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#071229">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#F5F6FA">
+<meta name="color-scheme" content="light">
 <meta name="robots" content="noindex,nofollow">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'">
@@ -254,6 +254,59 @@ details.more[open] summary svg{transform:rotate(90deg)}
 .search input{flex:1;min-width:0;border:0;background:none;outline:none;color:var(--ink);font:500 16px var(--b);min-height:48px}
 .skill .tx span:last-child{display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
 [hidden]{display:none!important}
+/* ---- Light theme (Umar, 2 Nov): white surfaces, navy text, brand orange ---- */
+:root{
+  --bg:#F5F6FA;--bg2:#FFFFFF;--tile:#FFFFFF;--tile2:#F2F4F9;--stroke:rgba(14,35,71,.08);--stroke2:rgba(14,35,71,.14);
+  --ink:#0E2347;--ink2:#34445F;--mut:#66748C;
+  --ok:#0B7A52;--warn:#A85F00;--bad:#C2381B;--teal:#0F8C87;--or2:#E8860A;
+  --glow:0 0 0 1px var(--stroke),0 10px 28px -16px rgba(14,35,71,.22);
+}
+html,body{background:var(--bg)}
+.aurora{opacity:.45;filter:blur(70px)}
+.grain{display:none}
+.hdr{background:linear-gradient(var(--bg) 0%,rgba(245,246,250,.92) 70%,rgba(245,246,250,0))}
+.live{background:#fff;color:var(--ink)}
+.t,.skill,.lcard{backdrop-filter:none;-webkit-backdrop-filter:none}
+.dock .in{background:rgba(255,255,255,.94);box-shadow:inset 0 0 0 1px var(--stroke2),0 16px 34px -14px rgba(14,35,71,.35)}
+.tab.on{color:var(--navy)}
+.tab .badge{box-shadow:0 0 0 2px #fff}
+.seg button.on{background:var(--navy);color:#fff}
+.scrim{background:rgba(14,35,71,.35)}
+.sheet{background:#fff;box-shadow:0 -20px 50px rgba(14,35,71,.18)}
+.inp{background:var(--tile2)}
+.pill.ok{background:#E3F5EC}.pill.warn{background:#FFF1DC}.pill.bad{background:#FCE6E0}
+.close{background:#E5F5F3;box-shadow:inset 0 0 0 1px rgba(15,140,135,.25)}
+.clipc.done{background:#E5F5F3;box-shadow:inset 0 0 0 1px rgba(15,140,135,.4)}
+.skill.today{background:linear-gradient(120deg,#FFE7C4,#FFD9C9);box-shadow:inset 0 0 0 1px rgba(243,154,30,.6)}
+.ev::before{background:linear-gradient(var(--stroke2),transparent)}
+.hook em{color:var(--or2)}
+.stack i{box-shadow:inset 0 -2px 0 rgba(0,0,0,.08)}
+.st{background:var(--tile2)}
+/* new: tasks + videos */
+.task{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--stroke)}
+.task:first-of-type{border-top:0}
+.task .ic{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;flex:none;font:800 13px var(--h)}
+.task .ic.bad{background:#FCE6E0;color:var(--bad)}.task .ic.warn{background:#FFF1DC;color:var(--warn)}.task .ic.ok{background:#E3F5EC;color:var(--ok)}
+.task b{display:block;font:700 15px/1.3 var(--h)}
+.task span{font-size:13.5px;color:var(--mut)}
+.codes{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.code{display:inline-flex;align-items:center;gap:5px;font:800 12.5px/1 var(--h);padding:6px 9px;border-radius:9px;background:var(--tile2);color:var(--ink);box-shadow:inset 0 0 0 1px var(--stroke2)}
+.code.done{background:#E3F5EC;color:var(--ok);box-shadow:inset 0 0 0 1px rgba(11,122,82,.3)}
+.code.miss{background:#FCE6E0;color:var(--bad);box-shadow:inset 0 0 0 1px rgba(194,56,27,.25)}
+.dayhead{display:flex;align-items:center;gap:8px;margin:18px 4px 10px}
+.dayhead:first-child{margin-top:4px}
+.dayhead h3{font:800 18px var(--h)}
+.vid{padding:16px;margin-bottom:10px}
+.vid .top{display:flex;align-items:center;gap:8px}
+.vid .cd{font:800 18px var(--h);letter-spacing:.01em}
+.vid .ty{font:600 13px var(--h);color:var(--mut)}
+.vid ol{margin:12px 0 0;padding:0;list-style:none;counter-reset:v;display:flex;flex-direction:column;gap:8px}
+.vid li{counter-increment:v;position:relative;padding:10px 12px 10px 42px;border-radius:14px;background:var(--tile2);font-size:15px;line-height:1.45;color:var(--ink)}
+.vid li::before{content:counter(v);position:absolute;left:10px;top:10px;width:22px;height:22px;border-radius:7px;display:grid;place-items:center;font:800 12px var(--h);background:var(--or);color:var(--navy)}
+.vid .open{font:700 15px/1.35 var(--h);margin-top:10px}
+.vid .shotl{margin-top:10px;font-size:14px;color:var(--ink2);padding:10px 12px;border-radius:14px;background:#FFF6E9;box-shadow:inset 0 0 0 1px rgba(243,154,30,.25)}
+.vid .shotl b{font:800 12px var(--h);letter-spacing:.08em;text-transform:uppercase;color:var(--or2);display:block;margin-bottom:2px}
+.tp .bar b{color:#fff}.tp .icb{background:#1A2740;color:#fff;box-shadow:none}.tp .icb.big{background:var(--or);color:var(--navy)}.tp .ctl .spd{color:#C9D4EA}
 </style>
 </head>
 <body>
@@ -264,7 +317,7 @@ details.more[open] summary svg{transform:rotate(90deg)}
 <main class="login" id="login" hidden>
   <div class="lcard">
     <img src="mark.png" alt="" class="lmark">
-    <img src="wordmark.png" alt="Edvertico" class="lword">
+    <img src="wordmark-dark.png" alt="Edvertico" class="lword">
     <p class="mut" style="margin:6px 0 22px">Child brain development content plan</p>
     <form id="loginForm" autocomplete="on">
       <label class="fl" for="uid">ID</label>
@@ -281,20 +334,21 @@ details.more[open] summary svg{transform:rotate(90deg)}
 <div class="app" id="app" hidden>
   <header class="hdr">
     <img class="mark" src="mark.png" alt="">
-    <div><img class="wm" src="wordmark.png" alt="Edvertico"><div class="when" id="nowTxt"></div></div>
+    <div><img class="wm" src="wordmark-dark.png" alt="Edvertico"><div class="when" id="nowTxt"></div></div>
     <div class="sp"></div>
     <button class="live" id="syncBtn" aria-label="Refresh"><i></i><span>Loading</span></button>
   </header>
   <section class="view on" id="v-today"></section>
   <section class="view" id="v-posts"></section>
-  <section class="view" id="v-scripts"></section>
+  <section class="view" id="v-film"></section>
   <section class="view" id="v-plan"></section>
 </div>
 
 <nav class="dock" id="dock" aria-label="Main" hidden><div class="in">
   <button class="tab on" data-v="today"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="10" rx="2"/><rect x="13" y="3" width="8" height="6" rx="2"/><rect x="13" y="11" width="8" height="10" rx="2"/><rect x="3" y="15" width="8" height="6" rx="2"/></svg>Today</button>
+  <button class="tab" data-v="film"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="3"/><path d="M16 10l5-3v10l-5-3"/></svg>Film</button>
   <button class="tab" data-v="posts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="M6 8v8M11 6h10M11 12h10M11 18h7"/></svg>Posts</button>
-  <button class="tab" data-v="scripts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>Scripts</button>
+  
   <button class="tab" data-v="plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Plan</button>
   <button class="tab" data-v="me"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg>Account</button>
 </div></nav>
@@ -357,7 +411,7 @@ function firstLine(t){return (t||'').split('\n').find(x=>x.trim())||''}
 function netIcon(n){const c=NET[n]||[n,'#888'];return `<span class="nb" style="background:${c[1]}" title="${c[0]}"><svg viewBox="0 0 24 24">${NETICON[n]||''}</svg></span>`}
 
 /* ---------- state ---------- */
-const S={view:'today',postDay:null,content:null,live:null,liveAt:0,key:null,uid:'',q:''};
+const S={view:'today',postDay:null,content:null,live:null,liveAt:0,key:null,uid:'',q:'',film:'tomorrow'};
 let CAL=[],SCR={},BR={},byDate={};
 function brainFor(e){return BR[e.part_id]||BR.pfc||''}
 function scriptFor(e){return SCR[e.skill_no]||null}
@@ -374,6 +428,70 @@ function dayPosts(d){return ((S.live&&S.live.days&&S.live.days[d])||{}).posts||[
 function countNets(list){const c={};list.forEach(p=>p.nets.forEach(x=>c[x.n]=(c[x.n]||0)+1));return c}
 function stackHTML(list){const c=countNets(list),keys=NET_ORDER.filter(k=>c[k]);return `<div class="stack">${keys.map(k=>`<i style="flex:${c[k]};background:${NET[k][1]}"></i>`).join('')}</div><div class="legend">${keys.map(k=>`<span><i class="dot" style="background:${NET[k][1]}"></i>${NET[k][0]} <b>${c[k]}</b></span>`).join('')}</div>`}
 
+
+/* ---------- videos (codes + per-video talking points) ---------- */
+function nn(e){return String(e.skill_no).padStart(2,'0')}
+function footage(){const f=S.live&&S.live.footage;return Array.isArray(f)?f.map(x=>String(x).toUpperCase()):null}
+function hasClip(e,c){const f=footage();if(!f)return null;return f.includes(nn(e)+'_'+c)}
+function videosFor(e){
+  const s=scriptFor(e),P=s?s.points:[],out=[];
+  const th={code:nn(e)+'_TH',type:'Talking head',sub:'You to camera · 40 to 60 seconds',open:s?s.hook:'',close:s?s.close:'',points:[]};
+  if(s){th.points=P.slice(0,3).map(p=>p.say);if(!e.block_demo&&P[4])th.points.push(P[4].say)}
+  else th.points=[e.talking_head_script];
+  out.push(th);
+  out.push({code:nn(e)+'_HA',type:'Home activity',sub:'Child or hands · 20 to 40 seconds',shot:e.home_activity,
+    points:[P[3]?P[3].say:e.home_activity,'Film it close and steady: hands, the objects and the child\'s face when they get it right.','Do 2 or 3 short rounds so there are clean takes to cut from.']});
+  if(e.block_demo)out.push({code:nn(e)+'_BD',type:'Block demo',sub:'Edu Blocks or Edu Wall · 20 to 40 seconds',shot:e.block_demo,
+    points:[P[4]?P[4].say:e.block_demo,'Show the build from above first, then a close-up of the hands.','Keep it play: the blocks are one useful tool, not a fix for anything.']});
+  return out;
+}
+function dueOf(e){return addDays(e.date,-1)}
+function clipState(e,c){const h=hasClip(e,c);if(h===null)return 'unk';if(h)return 'done';const T=todayISO(),due=dueOf(e);return (due<T||(due===T&&minsNow()>780))?'miss':'todo'}
+function codeChip(e,c){const st=clipState(e,c);return `<span class="code ${st==='done'?'done':st==='miss'?'miss':''}">${st==='done'?'✓ ':''}${nn(e)}_${c}</span>`}
+function codesHTML(e){return `<div class="codes">${videosFor(e).map(v=>codeChip(e,v.code.slice(3))).join('')}</div>`}
+function weekFrom(start,n){const out=[];for(let i=0;i<n;i++){const e=byDate[addDays(start,i)];if(e)out.push(e)}return out}
+function behindList(){const T=todayISO();return CAL.filter(e=>e.date<=addDays(T,1)&&e.date>=addDays(T,-3)).filter(e=>videosFor(e).some(v=>clipState(e,v.code.slice(3))==='miss'))}
+function videoCard(e,v){
+  const st=clipState(e,v.code.slice(3));
+  return `<div class="t vid"><div class="top"><span class="cd">${v.code}</span><span class="ty">${v.type}</span><div style="flex:1"></div>${st==='done'?'<span class="pill ok">In Drive</span>':st==='miss'?'<span class="pill bad">Behind</span>':st==='todo'?'<span class="pill warn">To film</span>':''}</div>
+  <div class="mut small" style="margin-top:2px">${v.sub}</div>
+  ${v.open?`<div class="open">Start: ${esc(v.open)}</div>`:''}
+  <ol>${v.points.map(p=>`<li>${esc(p)}</li>`).join('')}</ol>
+  ${v.close?`<div class="close" style="margin-top:8px">End: ${esc(v.close)}</div>`:''}
+  ${v.shot?`<div class="shotl"><b>Shot</b>${esc(v.shot)}</div>`:''}
+  <div class="btns"><button class="btn sm" data-tpv="${e.skill_no}|${v.code}">${I.play}Teleprompter</button></div></div>`;
+}
+function renderFilm(){
+  const el=document.getElementById('v-film'),T=todayISO(),Tm=addDays(T,1);
+  const tabs=[['tomorrow','Tomorrow'],['week','This week'],['behind','Behind']];
+  let h=`<div class="title"><h2>Film</h2><div class="sp"></div>${footage()?'<span class="pill ok">Drive checked</span>':'<span class="pill warn">Drive not checked yet</span>'}</div>
+  <div class="seg">${tabs.map(([k,l])=>`<button class="${S.film===k?'on':''}" data-film="${k}">${l}${k==='behind'&&behindList().length?' · '+behindList().length:''}</button>`).join('')}</div>`;
+  let list=[];
+  if(S.film==='tomorrow')list=weekFrom(Tm,1);
+  else if(S.film==='week')list=weekFrom(Tm,7);
+  else list=behindList();
+  if(S.film==='week'&&list.length){const all=list.flatMap(e=>videosFor(e).map(v=>[e,v]));const done=all.filter(([e,v])=>clipState(e,v.code.slice(3))==='done').length;
+    h+=`<div class="t" style="margin-bottom:6px"><div class="lab">Shoot day list</div><div style="display:flex;align-items:baseline;gap:6px;margin-top:10px"><span class="num">${all.length}</span><span class="mut">videos for ${nice(list[0].date)} to ${nice(list[list.length-1].date)} · ${done} filmed</span></div>
+    ${list.map(e=>`<div class="task"><div class="ic ${videosFor(e).every(v=>clipState(e,v.code.slice(3))==='done')?'ok':'warn'}">${nn(e)}</div><div><b>${esc(e.skill)}</b><span>Posts ${nice(e.date)}</span>${codesHTML(e)}</div></div>`).join('')}</div>`}
+  if(!list.length)h+=`<div class="t"><div class="empty"><b>${S.film==='behind'?'Nothing behind':'Nothing planned'}</b>${S.film==='behind'?'Every video due so far is in Drive.':''}</div></div>`;
+  list.forEach(e=>{h+=`<div class="dayhead"><h3>${nn(e)} · ${esc(e.skill)}</h3><div style="flex:1"></div><span class="mut small">Posts ${nice(e.date)}</span></div>`;videosFor(e).forEach(v=>h+=videoCard(e,v))});
+  el.innerHTML=h;
+}
+function tasksCard(){
+  const T=todayISO(),Tm=addDays(T,1),f=footage();
+  let rows='';
+  if(!f)rows+=`<div class="task"><div class="ic warn">!</div><div><b>Drive not checked yet</b><span>Filming status appears after the next update.</span></div></div>`;
+  else{
+    behindList().forEach(e=>{const miss=videosFor(e).filter(v=>clipState(e,v.code.slice(3))==='miss').map(v=>v.code);rows+=`<div class="task"><div class="ic bad">${nn(e)}</div><div><b>Behind: ${esc(e.skill)}</b><span>Needed by ${nice(dueOf(e))} 1 PM · missing ${miss.join(', ')}</span></div></div>`});
+    const t=byDate[Tm];if(t){const vs=videosFor(t),miss=vs.filter(v=>clipState(t,v.code.slice(3))!=='done');if(miss.length&&!behindList().includes(t))rows+=`<div class="task"><div class="ic warn">${nn(t)}</div><div><b>Film today: ${esc(t.skill)}</b><span>Upload by today 1 PM · ${miss.map(v=>v.code).join(', ')}</span></div></div>`}
+    const doneToday=CAL.filter(e=>e.date>=addDays(T,-1)&&e.date<=addDays(T,7)&&videosFor(e).every(v=>clipState(e,v.code.slice(3))==='done'));
+    doneToday.forEach(e=>rows+=`<div class="task"><div class="ic ok">✓</div><div><b>${esc(e.skill)} filmed</b><span>${videosFor(e).map(v=>v.code).join(', ')} are in Drive</span></div></div>`);
+    const wk=weekFrom(Tm,7),left=wk.flatMap(e=>videosFor(e).filter(v=>clipState(e,v.code.slice(3))!=='done'));
+    rows+=`<div class="task"><div class="ic warn">${left.length}</div><div><b>Videos left for this week</b><span>${wk.length} skills from ${nice(Tm)}. Open Film → This week for the shoot list.</span></div></div>`;
+  }
+  return `<button class="t w2 tap" data-go="film" style="text-align:left"><div class="lab">${I.cam}Your tasks</div>${rows}</button>`;
+}
+
 /* ---------- views ---------- */
 function renderToday(){
   const T=todayISO(),e=byDate[T],i=CAL.findIndex(x=>x.date===T),el=document.getElementById('v-today');
@@ -383,6 +501,7 @@ function renderToday(){
     <div class="ring"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(14,35,71,.18)" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#0E2347" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}"/></svg><b>${e.day}<span>of ${CAL.length}</span></b></div>
     <h1>${esc(e.skill)}</h1><div class="facts"><span class="pill k">#${e.skill_no}</span><span class="pill">${esc(e.main_part)}</span><span class="pill">Grows ${esc(e.window)}</span></div>
     <img class="brain" src="${brainFor(e)}" alt=""></button>`;
+    h+=tasksCard();
   }else if(CAL.length)h+=`<div class="t w2"><h2>${T>CAL[CAL.length-1].date?'The 54-skill cycle is complete':'Campaign starts '+nice(CAL[0].date)}</h2></div>`;
   const P=dayPosts(T);
   if(P.length){
@@ -395,7 +514,7 @@ function renderToday(){
     h+=`<div class="t"><div class="lab">${I.cam}Face reels</div><div class="num" style="margin-top:14px">${reels.length}</div><div class="mut small" style="margin-top:6px">${reels.map(r=>hm12(r.dt.slice(11,16))).join(' · ')||'None today'}</div></div>`;
   }else h+=`<div class="t w2"><div class="lab">Posting today</div><div class="empty"><b>No posts yet</b>Today's schedule appears here after the next update.</div></div>`;
   const Tm=addDays(T,1),tm=byDate[Tm],PT=dayPosts(Tm);
-  if(tm)h+=`<button class="t w2 tap" data-go-day="${Tm}"><div class="lab">Tomorrow · ${nice(Tm)}</div><h2 style="font-size:24px;margin-top:10px">${esc(tm.skill)}</h2>${PT.length?`<div class="mut small" style="margin-top:4px">${PT.length} posts queued</div>${stackHTML(PT)}`:`<div class="mut small" style="margin-top:6px">Tomorrow's posts are queued at about 2 PM today.</div>`}</button>`;
+  if(tm)h+=`<button class="t w2 tap" data-go="film"><div class="lab">Tomorrow · ${nice(Tm)}</div><h2 style="font-size:24px;margin-top:10px">${esc(tm.skill)}</h2>${codesHTML(tm)}${PT.length?`<div class="mut small" style="margin-top:4px">${PT.length} post${PT.length===1?'':'s'} queued</div>${stackHTML(PT)}`:`<div class="mut small" style="margin-top:6px">Tomorrow's posts are queued at about 2 PM today.</div>`}</button>`;
   h+='</div>';el.innerHTML=h;
 }
 function renderPosts(){
@@ -426,7 +545,7 @@ function renderPlan(){
   let h=`<div class="title"><h2>Content plan</h2></div><div class="bento" style="margin-bottom:6px"><div class="t"><div class="lab">Posted</div><div class="num" style="margin-top:12px">${done}<small>/ ${CAL.length}</small></div></div><div class="t"><div class="lab">Ends</div><div class="num" style="font-size:30px;margin-top:16px">${CAL.length?nice(CAL[CAL.length-1].date):''}</div></div></div>`;
   let wk='';CAL.forEach(e=>{const d=new Date(e.date+'T00:00:00Z'),mon=new Date(d);mon.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7));const w=iso(mon);
     if(w!==wk){wk=w;h+=`<div class="wk">Week of ${nice(w)}</div>`}
-    h+=`<button class="skill ${e.date===T?'today':e.date<T?'past':''}" data-skill="${e.date}"><img src="${brainFor(e)}" alt=""><span class="tx"><span class="n">#${e.skill_no} · ${nice(e.date)}</span><b>${esc(e.skill)}</b><span>${esc(e.domain)} · ${esc(e.main_part)}</span></span>${I.chev.replace('<svg','<svg class="chev"')}</button>`});
+    h+=`<button class="skill ${e.date===T?'today':e.date<T?'past':''}" data-skill="${e.date}"><img src="${brainFor(e)}" alt=""><span class="tx"><span class="n">#${e.skill_no} · ${nice(e.date)}</span><b>${esc(e.skill)}</b><span>${esc(e.main_part)}</span>${codesHTML(e)}</span>${I.chev.replace('<svg','<svg class="chev"')}</button>`});
   el.innerHTML=h;
 }
 function renderMe(){
@@ -446,22 +565,24 @@ function openSkill(date){const e=byDate[date];if(!e)return;const sh=document.get
   sh.innerHTML=`<div class="grab"></div><div class="lab">Skill ${e.skill_no} · ${nice(e.date,true)}</div><h2 style="font-size:28px;margin:8px 0 2px">${esc(e.skill)}</h2>
   <div style="display:flex;gap:14px;align-items:center;margin-top:12px"><img src="${brainFor(e)}" style="width:116px;border-radius:18px;background:#fff" alt=""><dl class="kv" style="margin:0"><dt>Brain part</dt><dd>${esc(e.main_part)}</dd><dt>Grows</dt><dd>${esc(e.window)}</dd><dt>Adult-like</dt><dd>${esc(e.adult_like)}</dd></dl></div>
   <dl class="kv"><dt>Domain</dt><dd>${esc(e.domain)}</dd><dt>Helpers</dt><dd>${esc(e.other_parts)}</dd><dt>Activity</dt><dd>${esc(e.signature_activity)}</dd></dl>
-  <div class="btns"><button class="btn" data-tp-open="${e.skill_no}">${I.play}Teleprompter</button></div>
-  <div style="margin-top:6px">${scriptBlock(e)}</div>
-  ${e.home_activity?`<div class="shot" style="margin-top:14px"><b>Home activity</b>${esc(e.home_activity)}</div>`:''}${e.block_demo?`<div class="shot"><b>Block activity</b>${esc(e.block_demo)}</div>`:''}
+  <div style="margin-top:14px">${videosFor(e).map(v=>videoCard(e,v)).join('')}</div>
   <button class="btn ghost full" data-close style="margin-top:14px">Close</button>`;openSheetEl()}
 function closeSheet(){document.getElementById('sheet').classList.remove('on');document.getElementById('scrim').classList.remove('on')}
 const TP={play:false,speed:3,raf:0,last:0};
 function tpOpen(no){const e=CAL.find(x=>x.skill_no==no);if(!e)return;const s=scriptFor(e);document.getElementById('tpTitle').textContent=e.skill;
   document.getElementById('tpScroll').innerHTML=s?[`<p class="k"><small>Hook</small>${esc(s.hook)}</p>`].concat(s.points.map((p,i)=>`<p><small>${i+1} · ${esc(p.title)}</small>${esc(p.say)}</p>`)).concat([`<p class="k"><small>Close</small>${esc(s.close)}</p>`]).join(''):`<p>${esc(e.talking_head_script||'')}</p>`;
   document.getElementById('tpScroll').scrollTop=0;closeSheet();document.getElementById('tp').classList.add('on');tpSet(false)}
+function tpVideo(no,code){const e=CAL.find(x=>x.skill_no==no);if(!e)return;const v=videosFor(e).find(x=>x.code===code);if(!v)return;
+  document.getElementById('tpTitle').textContent=v.code+' · '+v.type;
+  const parts=[];if(v.open)parts.push(`<p class="k"><small>Start</small>${esc(v.open)}</p>`);v.points.forEach((p,i)=>parts.push(`<p><small>Point ${i+1}</small>${esc(p)}</p>`));if(v.close)parts.push(`<p class="k"><small>End</small>${esc(v.close)}</p>`);
+  document.getElementById('tpScroll').innerHTML=parts.join('');document.getElementById('tpScroll').scrollTop=0;closeSheet();document.getElementById('tp').classList.add('on');tpSet(false)}
 function tpSet(p){TP.play=p;document.getElementById('tpPlay').innerHTML=p?I.pause:I.play;document.getElementById('tpSpd').textContent='Speed '+TP.speed;cancelAnimationFrame(TP.raf);if(p){TP.last=performance.now();TP.raf=requestAnimationFrame(tpStep)}}
 function tpStep(t){const sc=document.getElementById('tpScroll'),dt=Math.min(64,t-TP.last);TP.last=t;sc.scrollTop+=TP.speed*14*dt/1000;if(sc.scrollTop+sc.clientHeight>=sc.scrollHeight-2)return tpSet(false);TP.raf=requestAnimationFrame(tpStep)}
 
 /* ---------- shell ---------- */
 function renderHeader(){const d=pkNow();document.getElementById('nowTxt').textContent=nice(todayISO(),true)+' · '+hm12(String(d.getUTCHours()).padStart(2,'0')+':'+String(d.getUTCMinutes()).padStart(2,'0'))+' PKT';
   const b=document.getElementById('syncBtn');b.className='live'+(S.liveAt?(Date.now()-S.liveAt<8*3600e3?' on':' snap'):'');b.querySelector('span').textContent=S.liveAt?ago(S.liveAt):'Offline'}
-function render(){if(!S.content)return;renderHeader();({today:renderToday,posts:renderPosts,scripts:renderScripts,plan:renderPlan})[S.view]()}
+function render(){if(!S.content)return;renderHeader();({today:renderToday,film:renderFilm,posts:renderPosts,plan:renderPlan})[S.view]()}
 function show(v){if(v==='me')return renderMe();S.view=v;document.querySelectorAll('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));render();window.scrollTo(0,0)}
 document.addEventListener('click',ev=>{const t=ev.target.closest('button,[data-close]');if(!t)return;
   if(t.classList.contains('tab'))return show(t.dataset.v);
@@ -470,6 +591,8 @@ document.addEventListener('click',ev=>{const t=ev.target.closest('button,[data-c
   if(t.dataset.day){S.postDay=t.dataset.day;return renderPosts()}
   if(t.dataset.skill)return openSkill(t.dataset.skill);
   if(t.dataset.tpOpen)return tpOpen(t.dataset.tpOpen);
+  if(t.dataset.tpv){const [n,c]=t.dataset.tpv.split('|');return tpVideo(n,c)}
+  if(t.dataset.film){S.film=t.dataset.film;return renderFilm()}
   if(t.dataset.tp){const a=t.dataset.tp;if(a==='close'){tpSet(false);document.getElementById('tp').classList.remove('on')}else if(a==='play')tpSet(!TP.play);else if(a==='faster'){TP.speed=Math.min(10,TP.speed+1);tpSet(TP.play)}else if(a==='slower'){TP.speed=Math.max(1,TP.speed-1);tpSet(TP.play)}else document.getElementById('tpScroll').scrollTop=0;return}
   if(t.dataset.act==='logout')return logout();
   if(t.hasAttribute('data-close'))return closeSheet();
